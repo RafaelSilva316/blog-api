@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 // const session = require("express-session");
 // const MongoStore = require("connect-mongo")(session);
 // const passport = require("./passport-config");
@@ -45,7 +46,7 @@ app.set("view engine", "ejs");
 
 // app.use(passport.initialize());
 // app.use(passport.session());
-
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
